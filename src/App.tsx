@@ -1,26 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+import { Launches, Launch } from "./components";
+
+import "./assets/styles/app.scss";
+import logo from "./assets/images/spacex-logo.jpg";
+
+const App = () => (
+    <div className="app">
+        <div className="container">
+            <img src={ logo } alt="SpaceX" className="app__logo" />
+            <Route exact path="/" component={ Launches } />
+            <Route exact path="/launch/:id" component={ Launch } />
+        </div>
     </div>
-  );
-}
+)
 
 export default App;

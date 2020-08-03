@@ -1,0 +1,10 @@
+@import "reset";
+
+.app {
+
+  &__logo {
+    width: 300px;
+    display: block;
+    margin: auto;
+  }
+}
